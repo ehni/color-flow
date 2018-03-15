@@ -1,0 +1,7 @@
+build/
+dist/
+res/
+venv/
+color-flow.spec
+__pycache__
+.idea
