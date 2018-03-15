@@ -46,8 +46,6 @@ def print_progress(iteration, total, prefix='', suffix='', decimals=1, bar_lengt
     sys.stdout.flush()
 
 if __name__== "__main__":
-    print("== Starting Color-Flow ==")
-    print("==> Reading arguments")
     arguments = argparse.ArgumentParser(description="Tool for creating a color palette picture from a .mp4 video")
     arguments.add_argument("pathIn", help="path to video")
     arguments.add_argument("pathOut", help="path to save the image")
@@ -55,6 +53,8 @@ if __name__== "__main__":
     arguments.add_argument("--maxHeight", type=int, default=4000, help="maximum height of the output image, default=4000")
     arguments.add_argument("--takeFrames", type=bool, default=False, help="Use every frame (True) or just take a frame every second (False, Default)")
     args = arguments.parse_args()
+    print("== Starting Color-Flow ==")
+    print("==> Reading arguments")
     pathIn = args.pathIn
     pathOut = args.pathOut
     takeFrames = args.takeFrames
@@ -115,7 +115,7 @@ if __name__== "__main__":
         #print("==> Actually reading %s frames with a step value of %s" % (maxHeight, step))
 
     picture_height = actualFrames
-    picture_width = int(actualFrames * 0.5)
+    picture_width = actualFrames * 2/3
     print("==> Setting output picture dimension to %s x %s" % (picture_width, picture_height))
 
     print("==> Reading %d frames" % actualFrames)
