@@ -48,23 +48,25 @@ def print_progress(iteration, total, prefix='', suffix='', decimals=1, bar_lengt
 if __name__== "__main__":
     print("== Starting Color-Flow ==")
     print("==> Reading arguments")
-    arguments = argparse.ArgumentParser()
-    arguments.add_argument("--pathIn", help="path to video")
-    arguments.add_argument("--pathOut", help="path to save the image")
-    arguments.add_argument("--maxWidth", help="maximum width of the output image")
-    arguments.add_argument("--maxHeight", help="maximum height of the output image")
-    arguments.add_argument("--takeFrames", help="Use every frame (True) or just take a frame every second (False, Default)")
+    arguments = argparse.ArgumentParser(description="Tool for creating a color palette picture from a .mp4 video")
+    arguments.add_argument("pathIn", help="path to video")
+    arguments.add_argument("pathOut", help="path to save the image")
+    arguments.add_argument("--maxWidth", type=int, default=2000, help="maximum width of the output image, default=2000")
+    arguments.add_argument("--maxHeight", type=int, default=4000, help="maximum height of the output image, default=4000")
+    arguments.add_argument("--takeFrames", type=bool, default=False, help="Use every frame (True) or just take a frame every second (False, Default)")
     args = arguments.parse_args()
     pathIn = args.pathIn
     pathOut = args.pathOut
     takeFrames = args.takeFrames
-    maxHeight = args.maxHeight
-    maxWidth = args.maxWidth
+    maxHeight = int(args.maxHeight)
+    maxWidth = int(args.maxWidth)
+
     # Set up variables
     frameCount = 0
     count = 0
     colors = []
 
+    # Check arguments
     if maxWidth == None:
         maxWidth = 2000
         print("maxWidth not set. Setting to default value %d" % maxWidth)
@@ -80,11 +82,6 @@ if __name__== "__main__":
         takeFrames = True
     elif takeFrames == "False" or takeFrames == "false":
         takeFrames = False
-    else:
-        print("Could not read the ’takeFrames' argument! Please enter a valid value. Using the standard value")
-        takeFrames = False
-        print("takeFrames not set. Setting to %s. Using a frame every second now!" % takeFrames)
-
 
     if pathIn == None:
         print("pathIn not set. Exiting...")
@@ -98,15 +95,18 @@ if __name__== "__main__":
     print("==> Reading video from %s" % pathIn)
     vidcap = cv2.VideoCapture(pathIn)
     numberOfFrames = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
+    fps = int(vidcap.get(cv2.CAP_PROP_FPS))
     actualFrames = 0
     success, image = vidcap.read()
     success = True
     step = 1
+    print("Frames: %d" % numberOfFrames)
+    print("FPS: %d" % fps)
 
     if takeFrames == True:
         actualFrames = numberOfFrames
     else:
-        actualFrames = int(numberOfFrames/24)
+        actualFrames = int(numberOfFrames/fps)
 
     # Calculate number of frames to read and ouput picture width and height
     if actualFrames > maxHeight:
