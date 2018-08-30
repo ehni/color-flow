@@ -114,8 +114,8 @@ if __name__== "__main__":
         actualFrames = maxHeight
         #print("==> Actually reading %s frames with a step value of %s" % (maxHeight, step))
 
-    picture_height = actualFrames
-    picture_width = actualFrames * 2/3
+    picture_height = int(actualFrames)
+    picture_width = int(actualFrames * 2/3)
     print("==> Setting output picture dimension to %s x %s" % (picture_width, picture_height))
 
     print("==> Reading %d frames" % actualFrames)
