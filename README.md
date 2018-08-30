@@ -32,18 +32,16 @@ optional arguments:
       ==> Reading video from BigBuckBunny_320x180.mp4
       Frames: 14315
       FPS: 24
-      ==> Setting output picture dimension to 2666 x 4000
-      ==> Reading 4000 frames
+      ==> Setting output picture dimension to 397 x 596
+      ==> Reading 596 frames
       Progress: |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| 100.0% Complete
-      ==> 4000 frames read in 16.64 seconds
+      ==> 596 frames read in 2.75 seconds
       ==> Generating new image
       Progress: |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| 100.0% Complete
-      ==> Picture generated in  7.17 seconds
-      ==> Saving new picture colored_2666x4000.png to .
+      ==> Picture generated in  0.17 seconds
+      ==> Saving new picture colored_397x596.png to .
       ==> Done!
-
-
     
 * Output:
 
-![Example output image](https://raw.githubusercontent.com/ehni/color-flow/master/colored_2666x4000.png)
+![Example output image](https://raw.githubusercontent.com/ehni/color-flow/master/colored_397x596.png)
