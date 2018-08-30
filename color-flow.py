@@ -168,8 +168,10 @@ if __name__== "__main__":
 
     print("==> Picture generated in  %.2f seconds" % (time.time() - start_time))
 
-    print("==> Saving new picture to %s" % pathOut)
+    pictureName = "colored_{}x{}.png".format(picture_width,picture_height)
 
-    cv2.imwrite(pathOut + "/colored.png", picture)
+    print("==> Saving new picture {} to {}".format(pictureName, pathOut))
+
+    cv2.imwrite(pathOut + "/" + pictureName, picture)
 
     print("==> Done!")
