@@ -44,3 +44,5 @@ optional arguments:
 
     
 * Output:
+
+![Example output image](https://raw.githubusercontent.com/ehni/color-flow/master/colored.png)
