@@ -26,23 +26,24 @@ optional arguments:
 
 * Video: http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4
 
-      #> python color-flow BugBuckBunny_320x180.mp4 .
+      #> python color-flow BugBuckBunny_320x180.mp4 . --takeFrames True
       == Starting Color-Flow ==
       ==> Reading arguments
       ==> Reading video from BigBuckBunny_320x180.mp4
       Frames: 14315
       FPS: 24
-      ==> Setting output picture dimension to 397 x 596
-      ==> Reading 596 frames
+      ==> Setting output picture dimension to 2666 x 4000
+      ==> Reading 4000 frames
       Progress: |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| 100.0% Complete
-      ==> 596 frames read in 3.04 seconds
+      ==> 4000 frames read in 16.64 seconds
       ==> Generating new image
       Progress: |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| 100.0% Complete
-      ==> Picture generated in  0.17 seconds
-      ==> Saving new picture to .
+      ==> Picture generated in  7.17 seconds
+      ==> Saving new picture colored_2666x4000.png to .
       ==> Done!
+
 
     
 * Output:
 
-![Example output image](https://raw.githubusercontent.com/ehni/color-flow/master/colored.png)
+![Example output image](https://raw.githubusercontent.com/ehni/color-flow/master/colored_2666x4000.png)
