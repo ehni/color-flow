@@ -1,6 +1,13 @@
 # color-flow
 Visualize the colors of a movie clip with a single picture
 
+# Requirements
+
+* Python 3
+* opencv-python
+
+      pip3 install opencv-python
+
 # Options
 Tool for creating a color palette picture from a .mp4 video
 
@@ -26,7 +33,7 @@ optional arguments:
 
 * Video: http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4
 
-      #> python color-flow BugBuckBunny_320x180.mp4 . --takeFrames True
+      #> python3 color-flow.py BigBuckBunny_320x180.mp4 . --takeFrames True
       == Starting Color-Flow ==
       ==> Reading arguments
       ==> Reading video from BigBuckBunny_320x180.mp4
