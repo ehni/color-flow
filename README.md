@@ -8,16 +8,22 @@ Visualize the colors of a movie clip with a single picture
 
       pip3 install opencv-python
 
-# Options
+# Usage
 Tool for creating a color palette picture from a .mp4 video
 
-positional arguments:
+Run the script using Python 3 from your terminal:
+
+      python3 color-flow.py [-h] [--maxWidth MAXWIDTH] [--maxHeight MAXHEIGHT]
+                     [--takeFrames TAKEFRAMES]
+                     pathIn pathOut
+                     
+Description of the arguments:
 
       pathIn                path to video
   
       pathOut               path to save the image
 
-optional arguments:
+Optional arguments:
 
       -h, --help            show this help message and exit
   
